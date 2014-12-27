@@ -1,0 +1,175 @@
+################
+amediamanager
+
+Logical ID	Physical ID	Type	Status	Status Reason
+VPCScaffold	arn:aws:cloudformation:us-west-2:292052990214:stack/amediamanager-VPCScaffold-W6NZ9FCMUB11/70d36ff0-8da6-11e4-b989-507bfc8840a6	AWS::CloudFormation::Stack	CREATE_COMPLETE	
+AppResources	arn:aws:cloudformation:us-west-2:292052990214:stack/amediamanager-AppResources-1QTTZEUSFN7SJ/d63bfa60-8da6-11e4-b600-500160d4da44	AWS::CloudFormation::Stack	CREATE_COMPLETE	
+App1	arn:aws:cloudformation:us-west-2:292052990214:stack/amediamanager-App1-158Q55YKXYN0G/9593a1a0-8da8-11e4-a822-50e2414b0a44	AWS::CloudFormation::Stack	CREATE_COMPLETE
+
+################
+amediamanager-VPCScaffold-W6NZ9FCMUB11
+
+VPC	vpc-cdc762a8	AWS::EC2::VPC	CREATE_COMPLETE	
+InternetGateway	igw-fbcc019e	AWS::EC2::InternetGateway	CREATE_COMPLETE	
+PrivateRouteTable	rtb-23c06146	AWS::EC2::RouteTable	CREATE_COMPLETE	
+BastionSecurityGroup	sg-d47e3fb1	AWS::EC2::SecurityGroup	CREATE_COMPLETE	
+InstanceSecurityGroup	sg-d57e3fb0	AWS::EC2::SecurityGroup	CREATE_COMPLETE	
+PrivateSubnet1	subnet-9f51edfa	AWS::EC2::Subnet	CREATE_COMPLETE	
+PrivateSubnet2	subnet-6d1dcf1a	AWS::EC2::Subnet	CREATE_COMPLETE	
+PublicRouteTable	rtb-2dc06148	AWS::EC2::RouteTable	CREATE_COMPLETE	
+PublicSubnet2	subnet-6c1dcf1b	AWS::EC2::Subnet	CREATE_COMPLETE	
+GatewayToInternet	amedi-Gatew-U80CB9WDAB0C	AWS::EC2::VPCGatewayAttachment	CREATE_COMPLETE	
+PublicNetworkAcl	acl-777bde12	AWS::EC2::NetworkAcl	CREATE_COMPLETE	
+PublicSubnet1	subnet-9e51edfb	AWS::EC2::Subnet	CREATE_COMPLETE	
+PrivateNetworkAcl	acl-717bde14	AWS::EC2::NetworkAcl	CREATE_COMPLETE	
+NATSecurityGroup	sg-dd7e3fb8	AWS::EC2::SecurityGroup	CREATE_COMPLETE	
+PrivateSubnet1RouteTableAssociation	rtbassoc-6a22880f	AWS::EC2::SubnetRouteTableAssociation	CREATE_COMPLETE	
+BastionHost	i-99146593	AWS::EC2::Instance	CREATE_COMPLETE	
+PrivateSubnet2RouteTableAssociation	rtbassoc-6b22880e	AWS::EC2::SubnetRouteTableAssociation	CREATE_COMPLETE	
+PrivateSubnet1NetworkAclAssociation	aclassoc-264d1243	AWS::EC2::SubnetNetworkAclAssociation	CREATE_COMPLETE	
+PrivateSubnet2NetworkAclAssociation	aclassoc-204d1245	AWS::EC2::SubnetNetworkAclAssociation	CREATE_COMPLETE	
+PublicSubnet2RouteTableAssociation	rtbassoc-75228810	AWS::EC2::SubnetRouteTableAssociation	CREATE_COMPLETE	
+PublicRoute	amedi-Publi-15YVLXF079BY6	AWS::EC2::Route	CREATE_COMPLETE	
+InboundPrivateNetworkAclEntry	amedi-Inbou-SSQE7MZEIAYM	AWS::EC2::NetworkAclEntry	CREATE_COMPLETE	
+PublicSubnet1RouteTableAssociation	rtbassoc-74228811	AWS::EC2::SubnetRouteTableAssociation	CREATE_COMPLETE	
+OutBoundPrivateNetworkAclEntry	amedi-OutBo-15Z7ULGICNNXA	AWS::EC2::NetworkAclEntry	CREATE_COMPLETE	
+PublicSubnet2NetworkAclAssociation	aclassoc-214d1244	AWS::EC2::SubnetNetworkAclAssociation	CREATE_COMPLETE	
+InboundEmphemeralPublicNetworkAclEntry	amedi-Inbou-6YKDXWTZQWN	AWS::EC2::NetworkAclEntry	CREATE_COMPLETE	
+InboundHTTPPublicNetworkAclEntry	amedi-Inbou-1SOAIT93K0YOU	AWS::EC2::NetworkAclEntry	CREATE_COMPLETE	
+InboundSSHPublicNetworkAclEntry	amedi-Inbou-1KA8Y7E93F3PS	AWS::EC2::NetworkAclEntry	CREATE_COMPLETE	
+OutboundPublicNetworkAclEntry	amedi-Outbo-1E229O2666OOE	AWS::EC2::NetworkAclEntry	CREATE_COMPLETE	
+PublicSubnet1NetworkAclAssociation	aclassoc-234d1246	AWS::EC2::SubnetNetworkAclAssociation	CREATE_COMPLETE	
+InboundHTTPSPublicNetworkAclEntry	amedi-Inbou-2RDGZZZZZ4P5	AWS::EC2::NetworkAclEntry	CREATE_COMPLETE	
+NATDevice	i-4c176646	AWS::EC2::Instance	CREATE_COMPLETE	
+BastionIPAddress	54.148.220.198	AWS::EC2::EIP	CREATE_COMPLETE	
+NATIPAddress	54.149.49.139	AWS::EC2::EIP	CREATE_COMPLETE	
+PrivateRoute	amedi-Priva-14NNY0J379EAB	AWS::EC2::Route	CREATE_COMPLETE
+
+BastionInstanceType	t1.micro
+KeyName	aws.key
+NATInstanceType	m1.small
+SSHFrom	0.0.0.0/0
+VPCAvailabilityZone1	us-west-2a
+VPCAvailabilityZone2	us-west-2b
+
+Key	Value	Description
+Bastion	54.148.220.198	IP Address of the Bastion host
+InstanceSecurityGroup	sg-d57e3fb0	The ID of a VPC Security Group that has ingress access to the NAT instance.
+VPCId	vpc-cdc762a8	A VPC ID.
+PrivateSubnet1	subnet-9f51edfa	A private VPC subnet ID.
+PrivateSubnet2	subnet-6d1dcf1a	A private VPC subnet ID. Must be in a different AZ than PrivateSubnet1
+PublicSubnet1	subnet-9e51edfb	A public VPC subnet ID.
+PublicSubnet2	subnet-6c1dcf1b	A public VPC subnet ID. Must be in a different AZ than PrivateSubnet1
+
+################
+amediamanager-AppResources-1QTTZEUSFN7SJ
+
+Key	Value
+DatabaseName	amediamanager
+DatabasePassword	****
+DatabaseUser	****
+InstanceSecurityGroup	sg-d57e3fb0
+PrivateSubnet1	subnet-9f51edfa
+PrivateSubnet2	subnet-6d1dcf1a
+VPCId	vpc-cdc762a8
+
+Logical ID	Physical ID	Type	Status	Status Reason
+CacheSecurityGroup	sg-b27e3fd7	AWS::EC2::SecurityGroup	CREATE_COMPLETE	
+CacheSubnetGroup	amedi-Cache-1KP2VNAZP4EM0	AWS::ElastiCache::SubnetGroup	CREATE_COMPLETE	
+UsersTable	amediamanager-AppResources-1QTTZEUSFN7SJ-UsersTable-14OI4NK1L1OD2	AWS::DynamoDB::Table	CREATE_COMPLETE	
+AlarmTopic	arn:aws:sns:us-west-2:292052990214:amediamanager-AppResources-1QTTZEUSFN7SJ-AlarmTopic-6X5BOVPE58GL	AWS::SNS::Topic	CREATE_COMPLETE	
+CacheParameters	amedi-Cache-13NR8JHD0WUCV	AWS::ElastiCache::ParameterGroup	CREATE_COMPLETE	
+DBSecurityGroup	sg-bd7e3fd8	AWS::EC2::SecurityGroup	CREATE_COMPLETE	
+AppBucket	amediamanager-appresources-1qttzeusfn7s-appbucket-19wprg59pqqt	AWS::S3::Bucket	CREATE_COMPLETE	
+DBSubnetGroup	amediamanager-appresources-1qttzeusfn7sj-dbsubnetgroup-lw5dcazsl77y	AWS::RDS::DBSubnetGroup	CREATE_COMPLETE	
+TranscodeQueue	https://sqs.us-west-2.amazonaws.com/292052990214/amediamanager-AppResources-1QTTZEUSFN7SJ-TranscodeQueue-T25S9QC820HD	AWS::SQS::Queue	CREATE_COMPLETE	
+TranscodeTopic	arn:aws:sns:us-west-2:292052990214:amediamanager-AppResources-1QTTZEUSFN7SJ-TranscodeTopic-1WMOY59CUCNTR	AWS::SNS::Topic	CREATE_COMPLETE	
+TranscodeRole	amediamanager-AppResources-1QTTZEUSF-TranscodeRole-1TCIRKMQHIHS7	AWS::IAM::Role	CREATE_COMPLETE	
+TranscodeTopic2QueuePolicy	amediamanager-AppResources-1QTTZEUSFN7S-TranscodeTopic2QueuePolicy-1M18FNAPL6HF7	AWS::SQS::QueuePolicy	CREATE_COMPLETE	
+CacheCluster	ame-ca-1qz1p6joe2fg2	AWS::ElastiCache::CacheCluster	CREATE_COMPLETE	
+Database	adfkt9kb9llk7d	AWS::RDS::DBInstance	CREATE_COMPLETE	
+
+Key	Value	Description
+InstanceSecurityGroup	sg-d57e3fb0	
+RdsDbId	adfkt9kb9llk7d	
+CacheEndpoint	ame-ca-1qz1p6joe2fg2.jp3ww1.cfg.usw2.cache.amazonaws.com	
+CachePort	11211	
+AppBucket	amediamanager-appresources-1qttzeusfn7s-appbucket-19wprg59pqqt	
+TranscodeTopic	arn:aws:sns:us-west-2:292052990214:amediamanager-AppResources-1QTTZEUSFN7SJ-TranscodeTopic-1WMOY59CUCNTR	
+TranscodeQueue	https://sqs.us-west-2.amazonaws.com/292052990214/amediamanager-AppResources-1QTTZEUSFN7SJ-TranscodeQueue-T25S9QC820HD	
+TranscodeRoleArn	arn:aws:iam::292052990214:role/amediamanager-AppResources-1QTTZEUSF-TranscodeRole-1TCIRKMQHIHS7	
+UsersTable	amediamanager-AppResources-1QTTZEUSFN7SJ-UsersTable-14OI4NK1L1OD2	
+DatabaseUser	admin	
+DatabasePassword	0bee082a464	
+
+#########################
+amediamanager-App1-158Q55YKXYN0G
+
+Key	Value
+AppBucket	amediamanager-appresources-1qttzeusfn7s-appbucket-19wprg59pqqt
+ApplicationName	aMediaManager-VPC
+AssetsBucketPrefix	aws-amm-
+CacheEndpoint	ame-ca-1qz1p6joe2fg2.jp3ww1.cfg.usw2.cache.amazonaws.com
+CachePort	11211
+DatabaseName	amediamanager
+DatabasePassword	****
+DatabaseUser	****
+DeveloperName	Default
+EnvironmentName	Dev-VPC
+InstanceSecurityGroup	sg-d57e3fb0
+InstanceType	t1.micro
+KeyName	aws.key
+PrivateSubnets	subnet-9f51edfa,subnet-6d1dcf1a
+PublicSubnets	subnet-9e51edfb,subnet-6c1dcf1b
+RdsDbId	adfkt9kb9llk7d
+TranscodeQueue	https://sqs.us-west-2.amazonaws.com/292052990214/amediamanager-AppResources-1QTTZEUSFN7SJ-TranscodeQueue-T25S9QC820HD
+TranscodeRoleArn	arn:aws:iam::292052990214:role/amediamanager-AppResources-1QTTZEUSF-TranscodeRole-1TCIRKMQHIHS7
+TranscodeTopic	arn:aws:sns:us-west-2:292052990214:amediamanager-AppResources-1QTTZEUSFN7SJ-TranscodeTopic-1WMOY59CUCNTR
+UsersTable	amediamanager-AppResources-1QTTZEUSFN7SJ-UsersTable-14OI4NK1L1OD2
+VPCId	vpc-cdc762a8
+WarKey	public/amediamanager.war
+
+Logical ID	Physical ID	Type	Status	Status Reason
+EbAppRole	amediamanager-App1-158Q55YKXYN0G-EbAppRole-1AYYSA03OI85H	AWS::IAM::Role	CREATE_COMPLETE	
+RolePolicies	amedi-Role-9ILCYVUBNSM5	AWS::IAM::Policy	CREATE_COMPLETE	
+EbAppInstanceProfile	amediamanager-App1-158Q55YKXYN0G-EbAppInstanceProfile-3Y43HHR8SAPU	AWS::IAM::InstanceProfile	CREATE_COMPLETE	
+Application	aMediaManager-VPC-Default	AWS::ElasticBeanstalk::Application	CREATE_COMPLETE	
+Environment	Dev-VPC-Default	AWS::ElasticBeanstalk::Environment	CREATE_COMPLETE	
+
+
+Key	Value	Description
+URL	http://awseb-e-d-AWSEBLoa-OS5RW9I967Y-54877117.us-west-2.elb.amazonaws.com	URL of the AWS Elastic Beanstalk Environment
+
+#######################
+awseb-e-di5emutcrw-stack
+
+Key	Value
+AppSource	****
+AWSEBAgentId	****
+AWSEBEnvironmentBucket	****
+AWSEBEnvironmentId	****
+AWSEBEnvironmentName	****
+AWSEBReferrerId	****
+EnvironmentVariables	****
+InstancePort	****
+InstanceType	****
+JVMOptions	****
+LogPublicationControl	****
+
+Logical ID	Physical ID	Type	Status	Status Reason
+AWSEBInstanceLaunchWaitHandle	https://cloudformation-waitcondition-us-west-2.s3-us-west-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-west-2%3A292052990214%3Astack/awseb-e-di5emutcrw-stack/f4ede110-8da8-11e4-a0be-50d5020578e0/AWSEBInstanceLaunchWaitHandle?AWSAccessKeyId=AKIAIY5RM4DUXMU25KNA&Expires=1419758156&Signature=9f88Q7O8Evowp4NxZtZN3ZCF%2FFE%3D	AWS::CloudFormation::WaitConditionHandle	CREATE_COMPLETE	
+AWSEBLoadBalancerSecurityGroup	sg-a081c0c5	AWS::EC2::SecurityGroup	CREATE_COMPLETE	
+AWSEBBeanstalkMetadata	https://cloudformation-waitcondition-us-west-2.s3-us-west-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-west-2%3A292052990214%3Astack/awseb-e-di5emutcrw-stack/f4ede110-8da8-11e4-a0be-50d5020578e0/AWSEBBeanstalkMetadata?AWSAccessKeyId=AKIAIY5RM4DUXMU25KNA&Expires=1419758157&Signature=IQLieKf2EEtKrL%2Fp2eZC9kKsE5c%3D	AWS::CloudFormation::WaitConditionHandle	CREATE_COMPLETE	
+AWSEBLoadBalancer	awseb-e-d-AWSEBLoa-OS5RW9I967Y	AWS::ElasticLoadBalancing::LoadBalancer	CREATE_COMPLETE	
+AWSEBSecurityGroup	sg-a981c0cc	AWS::EC2::SecurityGroup	CREATE_COMPLETE	
+AWSEBAutoScalingLaunchConfiguration	awseb-e-di5emutcrw-stack-AWSEBAutoScalingLaunchConfiguration-1IACICGCVEK5Z	AWS::AutoScaling::LaunchConfiguration	CREATE_COMPLETE	
+AWSEBSecurityGroupSSHIngress	AWSEBSecurityGroupSSHIngress	AWS::EC2::SecurityGroupIngress	CREATE_COMPLETE	
+AWSEBAutoScalingGroup	awseb-e-di5emutcrw-stack-AWSEBAutoScalingGroup-1ULTFT89Q0Z31	AWS::AutoScaling::AutoScalingGroup	CREATE_COMPLETE	
+AWSEBAutoScalingScaleDownPolicy	arn:aws:autoscaling:us-west-2:292052990214:scalingPolicy:b16a1b6c-8464-448a-9b63-d0916445a7cc:autoScalingGroupName/awseb-e-di5emutcrw-stack-AWSEBAutoScalingGroup-1ULTFT89Q0Z31:policyName/awseb-e-di5emutcrw-stack-AWSEBAutoScalingScaleDownPolicy-10HV3OOPD6TMQ	AWS::AutoScaling::ScalingPolicy	CREATE_COMPLETE	
+AWSEBInstanceLaunchWaitCondition	arn:aws:cloudformation:us-west-2:292052990214:stack/awseb-e-di5emutcrw-stack/f4ede110-8da8-11e4-a0be-50d5020578e0/AWSEBInstanceLaunchWaitHandle	AWS::CloudFormation::WaitCondition	CREATE_COMPLETE	
+AWSEBAutoScalingScaleUpPolicy	arn:aws:autoscaling:us-west-2:292052990214:scalingPolicy:efcfedb4-c187-44ac-ab7b-567d27811ec5:autoScalingGroupName/awseb-e-di5emutcrw-stack-AWSEBAutoScalingGroup-1ULTFT89Q0Z31:policyName/awseb-e-di5emutcrw-stack-AWSEBAutoScalingScaleUpPolicy-1CKBTD5YA9QSU	AWS::AutoScaling::ScalingPolicy	CREATE_COMPLETE	
+AWSEBCloudwatchAlarmLow	awseb-e-di5emutcrw-stack-AWSEBCloudwatchAlarmLow-RXMQYRFJ6MIK	AWS::CloudWatch::Alarm	CREATE_COMPLETE	
+AWSEBCloudwatchAlarmHigh	awseb-e-di5emutcrw-stack-AWSEBCloudwatchAlarmHigh-1AUC9KERPDQT7	AWS::CloudWatch::Alarm	CREATE_COMPLETE	
+
+Key	Value	Description
+AWSEBLoadBalancerURL	http://awseb-e-d-AWSEBLoa-OS5RW9I967Y-54877117.us-west-2.elb.amazonaws.com	The ElasticBeanstalk ELB URL of the website
