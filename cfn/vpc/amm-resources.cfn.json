@@ -172,7 +172,7 @@
         "MasterUsername": {
           "Ref": "DatabaseUser"
         },
-        "DBInstanceClass": "db.m1.small",
+        "DBInstanceClass": "db.t1.micro",
         "AllocatedStorage": "5",
         "MasterUserPassword": {
           "Ref": "DatabasePassword"
